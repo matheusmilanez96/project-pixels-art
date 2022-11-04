@@ -1,0 +1,25 @@
+.color {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+.first-button {
+    background-color: black;
+}
+
+.second-button {
+    background-color: blue;
+}
+
+.third-button {
+    background-color: green;
+}
+
+.fourth-button {
+    background-color: yellow;
+}
+
