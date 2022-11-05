@@ -24,9 +24,9 @@
 }
 
 #pixel-board {
-    display: grid;
-    grid-template-columns: 40px 40px 40px 40px 40px;
-    grid-template-rows: 40px 40px 40px 40px 40px;
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px 40px;
+  grid-template-rows: 40px 40px 40px 40px 40px;
 }
 
 .pixel {
