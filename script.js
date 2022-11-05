@@ -31,15 +31,15 @@ const localPalette = () => {
 localPalette();
 
 const pixelBoard = () => {
-  const board = document.querySelector("#pixel-board");
+  const board = document.querySelector('#pixel-board');
   for (let i = 0; i < 5; i += 1) {
     for (let j = 0; j < 5; j += 1) {
-        const pixel = document.createElement('div');
-        pixel.classList.add('pixel');
-        pixel.style.backgroundColor = 'white';
-        board.appendChild(pixel);
+      const pixel = document.createElement('div');
+      pixel.classList.add('pixel');
+      pixel.style.backgroundColor = 'white';
+      board.appendChild(pixel);
     }
   }
-}
+};
 
 pixelBoard();
