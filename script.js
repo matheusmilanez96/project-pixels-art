@@ -2,6 +2,7 @@ const firstButton = document.querySelector('.first-button');
 const secondButton = document.querySelector('.second-button');
 const thirdButton = document.querySelector('.third-button');
 const fourthButton = document.querySelector('.fourth-button');
+const clearButton = document.querySelector('#clear-board');
 
 const randomColors = () => {
   const randomButton = document.querySelector('#button-random-color');
@@ -63,12 +64,23 @@ fourthButton.addEventListener('click', selecionarCor);
 const pintar = () => {
   const pixels = document.querySelectorAll('.pixel');
   pixels.forEach(element => {
-    element.addEventListener('click', () => {
+    element.addEventListener('click', (event) => {
       const elementoSelected = document.querySelector('.selected');
       const corSelected = window.getComputedStyle(elementoSelected).backgroundColor;
-      element.style.backgroundColor = corSelected;
+      event.target.style.backgroundColor = corSelected;
     });
   });
 };
 
 pintar();
+
+const clearBoard = () => {
+  const pixel = document.querySelectorAll('.pixel');
+
+  for (let i = 0; i < pixel.length; i += 1) {
+    const elemento = pixel[i];
+    elemento.style.backgroundColor = '#FFFFFF';
+  }
+};
+
+clearButton.addEventListener('click', clearBoard);
