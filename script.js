@@ -1,3 +1,8 @@
+const firstButton = document.querySelector('.first-button');
+const secondButton = document.querySelector('.second-button');
+const thirdButton = document.querySelector('.third-button');
+const fourthButton = document.querySelector('.fourth-button');
+
 const randomColors = () => {
   const randomButton = document.querySelector('#button-random-color');
   const color = document.querySelectorAll('.color');
@@ -43,3 +48,14 @@ const pixelBoard = () => {
 };
 
 pixelBoard();
+
+const selecionarCor = (event) => {
+  const elementoSelected = document.querySelector('.selected');
+  elementoSelected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+firstButton.addEventListener('click', selecionarCor);
+secondButton.addEventListener('click', selecionarCor);
+thirdButton.addEventListener('click', selecionarCor);
+fourthButton.addEventListener('click', selecionarCor);
