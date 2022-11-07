@@ -59,3 +59,16 @@ firstButton.addEventListener('click', selecionarCor);
 secondButton.addEventListener('click', selecionarCor);
 thirdButton.addEventListener('click', selecionarCor);
 fourthButton.addEventListener('click', selecionarCor);
+
+const pintar = () => {
+  const pixels = document.querySelectorAll('.pixel');
+  pixels.forEach(element => {
+    element.addEventListener('click', () => {
+      const elementoSelected = document.querySelector('.selected');
+      const corSelected = window.getComputedStyle(elementoSelected).backgroundColor;
+      element.style.backgroundColor = corSelected;
+    });
+  });
+};
+
+pintar();
