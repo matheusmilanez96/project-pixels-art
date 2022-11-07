@@ -53,7 +53,7 @@ const selecionarCor = (event) => {
   const elementoSelected = document.querySelector('.selected');
   elementoSelected.classList.remove('selected');
   event.target.classList.add('selected');
-}
+};
 
 firstButton.addEventListener('click', selecionarCor);
 secondButton.addEventListener('click', selecionarCor);
