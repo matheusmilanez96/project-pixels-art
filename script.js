@@ -65,9 +65,16 @@ const pintar = () => {
   const pixels = document.querySelectorAll('.pixel');
   pixels.forEach(element => {
     element.addEventListener('click', (event) => {
+      const pixels2 = document.querySelectorAll('.pixel');
+      const colorArray = [];
       const elementoSelected = document.querySelector('.selected');
       const corSelected = window.getComputedStyle(elementoSelected).backgroundColor;
       event.target.style.backgroundColor = corSelected;
+      for (let i = 0; i < pixels2.length; i += 1) {
+        let cor = window.getComputedStyle(pixels2[i]).backgroundColor;
+        colorArray.push(cor);
+      }
+      localStorage.setItem('pixelBoard', JSON.stringify(colorArray));
     });
   });
 };
@@ -75,12 +82,23 @@ const pintar = () => {
 pintar();
 
 const clearBoard = () => {
-  const pixel = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
 
-  for (let i = 0; i < pixel.length; i += 1) {
-    const elemento = pixel[i];
-    elemento.style.backgroundColor = '#FFFFFF';
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = '#FFFFFF';
   }
 };
 
 clearButton.addEventListener('click', clearBoard);
+
+const localBoard = () => {
+  const coresLocal = JSON.parse(localStorage.getItem('pixelBoard'));
+  const pixels = document.querySelectorAll('.pixel');
+  if (coresLocal !== null) {
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].style.backgroundColor = coresLocal[i];
+    }
+  }
+};
+
+localBoard();
