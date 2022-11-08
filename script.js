@@ -63,15 +63,16 @@ fourthButton.addEventListener('click', selecionarCor);
 
 const pintar = () => {
   const pixels = document.querySelectorAll('.pixel');
-  pixels.forEach(element => {
+  pixels.forEach((element) => {
     element.addEventListener('click', (event) => {
+      const evento = event;
       const pixels2 = document.querySelectorAll('.pixel');
       const colorArray = [];
       const elementoSelected = document.querySelector('.selected');
       const corSelected = window.getComputedStyle(elementoSelected).backgroundColor;
-      event.target.style.backgroundColor = corSelected;
+      evento.target.style.backgroundColor = corSelected;
       for (let i = 0; i < pixels2.length; i += 1) {
-        let cor = window.getComputedStyle(pixels2[i]).backgroundColor;
+        const cor = window.getComputedStyle(pixels2[i]).backgroundColor;
         colorArray.push(cor);
       }
       localStorage.setItem('pixelBoard', JSON.stringify(colorArray));
